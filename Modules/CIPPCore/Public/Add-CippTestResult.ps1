@@ -48,13 +48,16 @@ function Add-CippTestResult {
         [string]$TestId,
 
         [Parameter(Mandatory = $false)]
-        [string]$testType = 'Identity',
+        [string]$TestType = 'Identity',
 
         [Parameter(Mandatory = $true)]
         [string]$Status,
 
         [Parameter(Mandatory = $false)]
         [string]$ResultMarkdown,
+
+        [Parameter(Mandatory = $false)]
+        [string]$ResultDataJson,
 
         [Parameter(Mandatory = $false)]
         [string]$Risk,
@@ -83,6 +86,7 @@ function Add-CippTestResult {
             RowKey               = $TestId
             Status               = $Status
             ResultMarkdown       = $ResultMarkdown ?? ''
+            ResultDataJson       = $ResultDataJson ?? ''
             Risk                 = $Risk ?? ''
             Name                 = $Name ?? ''
             Pillar               = $Pillar ?? ''
